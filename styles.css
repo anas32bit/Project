@@ -1,0 +1,221 @@
+/* Base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: linear-gradient(120deg, #b5b80f, #eb551a);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: #333;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background: #5ef804;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+#hero {
+    padding: 50px;
+    background: linear-gradient(135deg, #23fd0f, #6e50f1);
+    color: white;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+#hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Accordion for News Page */
+.accordion h3 {
+    background: #05f341;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    margin: 10px 0;
+    transition: background 0.5s;
+}
+
+.accordion h3:hover {
+    background: #02f32a;
+}
+
+.accordion .content {
+    display: none;
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+.accordion h3.active + .content {
+    display: block;
+}
+
+/* Event Cards for Events Page */
+#events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.event-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Directory Styling */
+#directory .business {
+    background: #f1f1f1;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+#directory .business:hover {
+    background: #e0e0e0;
+}
+
+/* Resource Center Tabs */
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #ddd;
+}
+
+.tabs .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #0bf103;
+    color: white;
+    margin-right: 5px;
+    transition: background 0.3s;
+}
+
+.tabs .tab:hover {
+    background: #02eb48;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.tab.active + .tab-content {
+    display: block;
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background: #5463f1;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #3f60f5;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+body.light-mode {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ccc;
+}
+
+body.dark-mode header, body.dark-mode nav {
+    background-color: #1a1a1a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-card {
+        width: 100%;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
